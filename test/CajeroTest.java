@@ -7,7 +7,7 @@ public class CajeroTest {
 	@Test
 	public void elCajeroAceptaUnaTarjeta() {
 		
-		assertTrue("El cajero acepta la tarjeta", new Cajero().aceptaTarjeta(new Tarjeta(){}));
+		assertTrue("El cajero acepta la tarjeta", new Cajero().aceptaTarjeta(new Tarjeta()));
 	}
 	
 }
