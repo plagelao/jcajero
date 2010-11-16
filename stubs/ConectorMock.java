@@ -11,9 +11,9 @@ public class ConectorMock implements Conector {
 	public String obtenerJsonDeRespuesta(String url) {
 		urlChallenge = url;
 		if (url.contains("challenge"))
-			return "{token: \"WONDERLAND\"}";
+			return "{\"token\":\"WONDERLAND\"}";
 		else if (url.contains("balance"))
-			return "{balance: \"1000\"}";
+			return "{\"balance\":1000}";
 		else
 			return "";
 	}

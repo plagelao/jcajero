@@ -21,7 +21,7 @@ public class Cuenta {
 		return token;
 	}
 
-	public int consultarSaldo() {
+	public Saldo consultarSaldo() {
 		String json = conector
 				.obtenerJsonDeRespuesta("debit_card/balance?token=" + token);
 		return generadorSaldo.crear(json);
