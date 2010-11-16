@@ -18,7 +18,7 @@ public class BancoMock implements Banco {
 		if (tarjeta.usuario().equals("Nombre de usuario invalido")) {
 			return Cuenta.CUENTA_INVALIDA; 
 		}
-		return Cuenta.crear();
+		return Cuenta.crear("");
 	}
 
 }

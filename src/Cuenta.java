@@ -1,13 +1,19 @@
 
 public class Cuenta {
 
-	public static final Cuenta CUENTA_INVALIDA = new Cuenta();
+	public static final Cuenta CUENTA_INVALIDA = new Cuenta(null);
+	private final String token;
 	
-	public static Cuenta crear() {
-		return new Cuenta();
+	public static Cuenta crear(String token) {
+		return new Cuenta(token);
 	}
 
-	private Cuenta() {
+	private Cuenta(String token) {
+		this.token = token;
 		
+	}
+
+	public String token() {
+		return token;
 	}
 }
