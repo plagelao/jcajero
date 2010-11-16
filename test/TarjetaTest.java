@@ -9,5 +9,10 @@ public class TarjetaTest {
 	public void tarjetaValidaConNombreDeUsuario() {
 		assertNotNull("La tarjeta deber’a ser v‡lida", Tarjeta.crear("Pepito"));
 	}
+
+	@Test
+	public void tarjetaInvalidaSinNombreDeUsuario() {
+		assertEquals("La tarjeta deber’a no ser v‡lida", Tarjeta.TARJETA_INVALIDA ,Tarjeta.crear(null));
+	}
 	
 }
