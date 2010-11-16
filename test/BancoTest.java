@@ -1,18 +1,18 @@
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
-
-
 public class BancoTest {
 
-	ConectorMock conectorHttp = new ConectorMock();
+	ConectorMock conectorHttp = new ConectorMock(0);
 	Banco banco = new Banco(conectorHttp, new GeneradorToken());
 
 	@Test
 	public void dadaUnaTarjetaValidaEsCapazDeConstruirLaUrlDeChallenge() {
 		banco.obtenerCuenta("alice", obtenerPin());
-		assertTrue(conectorHttp.haHechoUnSendA("debit_card/challenge?card=alice&pin=7643"));
+		assertTrue(conectorHttp
+				.haHechoUnSendA("debit_card/challenge?card=alice&pin=7643"));
 	}
 
 	private Pin obtenerPin() {
@@ -29,5 +29,4 @@ public class BancoTest {
 		assertEquals("WONDERLAND", cuenta.token());
 	}
 
-	
 }

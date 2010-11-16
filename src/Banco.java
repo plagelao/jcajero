@@ -12,7 +12,7 @@ public class Banco {
 		String json = conectorHttp
 				.obtenerJsonDeRespuesta("debit_card/challenge?card=" + usuario
 						+ "&pin=" + pin.digitos());
-		return Cuenta.crear(crearToken(json));
+		return Cuenta.crear(crearToken(json), conectorHttp);
 	}
 
 	private String crearToken(String json) {
