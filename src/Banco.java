@@ -1,5 +1,5 @@
 
 public interface Banco {
 
-	Cuenta obtenerCuenta(Tarjeta tarjeta);
+	Cuenta obtenerCuenta(String usuario, Pin pin);
 }
