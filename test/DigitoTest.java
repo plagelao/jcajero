@@ -38,6 +38,6 @@ public class DigitoTest {
 	@Test
 	public void digitosConDistintoNumeroSonDistintos() {
 		Digito digito = Digito.crearDigito(7);
-		assertFalse(digito == Digito.crearDigito(6));
+		assertFalse(digito.equals(Digito.crearDigito(6)));
 	}
 }

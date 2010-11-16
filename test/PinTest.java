@@ -30,16 +30,18 @@ public class PinTest {
 
 	@Test
 	public void pinCreadoCorrespondeConPinDevuelto() {
-		List<Digito> digitos = new ArrayList<Digito>();
-		digitos.add(digito1);
-		digitos.add(digito2);
-		digitos.add(digito3);
-		digitos.add(digito4);
+		String digitos = crearListaDeDigitos();
 		Pin pin = Pin.crearPin(digito1, digito2, digito3, digito4);
-		for(int i = 0; i < digitos.size(); i++) {
-			assertEquals(digitos.get(i), pin.digitos()[i]);
-		}
+		assertEquals(digitos, pin.digitos());
 	}
-	
+
+	private String crearListaDeDigitos() {
+		return new StringBuilder()
+				.append(digito1.valor())
+				.append(digito2.valor())
+				.append(digito3.valor())
+				.append(digito4.valor())
+				.toString();
+	}
 	
 }
