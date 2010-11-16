@@ -11,7 +11,7 @@ public class BancoInternet implements Banco {
 
 	@Override
 	public Cuenta obtenerCuenta(Tarjeta tarjeta) {
-		String json = conectorHttp.send("debit_card/challenge?card=" + tarjeta.usuario());
+		String json = conectorHttp.obtenerJsonDeRespuesta("debit_card/challenge?card=" + tarjeta.usuario());
 		return Cuenta.crear(crearToken(json));
 	}
 

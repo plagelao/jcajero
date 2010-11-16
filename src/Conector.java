@@ -1,5 +1,5 @@
 public interface Conector {
 
-	String send(String url);
+	String obtenerJsonDeRespuesta(String url);
 
 }

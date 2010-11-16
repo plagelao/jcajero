@@ -3,11 +3,11 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 public class CajeroTest {
+	BancoMock banco = new BancoMock();
 
 	@Test
 	public void elCajeroAceptaUnaTarjetaConUnUsuarioValido() {
 	
-		BancoMock banco = new BancoMock();
 		Tarjeta tarjeta = Tarjeta.crear("Pepito");
 		
 		assertTrue("El cajero acepta la tarjeta", new Cajero(banco).aceptaTarjeta(tarjeta));
@@ -17,7 +17,6 @@ public class CajeroTest {
 	@Test
 	public void elCajeroNoAceptaUnaTarjetaConUnUsuarioInvalido() {
 	
-		BancoMock banco = new BancoMock();
 		Tarjeta tarjeta = Tarjeta.crear("Nombre de usuario invalido");
 		
 		assertFalse("El cajero acepta la tarjeta", new Cajero(banco).aceptaTarjeta(tarjeta));
