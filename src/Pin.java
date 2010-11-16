@@ -1,14 +1,11 @@
 
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Pin {
 
-	private List<Digito> digitos = new ArrayList<Digito>();
+	private StringBuilder digitos = new StringBuilder();
 	
 	private Pin anyadirDigito(Digito digito) {
-		digitos.add(digito);
+		digitos.append(digito.valor());
 		return this;
 	}
 
@@ -20,8 +17,8 @@ public class Pin {
 						.anyadirDigito(digito4);
 	}
 
-	public Digito[] digitos() {
-		return digitos.toArray(new Digito[digitos.size()]);
+	public String digitos() {
+		return digitos.toString();
 	}
 
 }
